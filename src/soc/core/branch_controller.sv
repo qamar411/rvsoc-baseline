@@ -1,10 +1,10 @@
 typedef enum logic [2:0] {
-    BEQ, 
-    BNE, 
-    BLT, 
-    BGE, 
-    BLTU, 
-    BGEU
+    BEQ = 0, 
+    BNE = 1, 
+    BLT = 4, 
+    BGE = 5, 
+    BLTU = 6, 
+    BGEU = 7
 } branch_t;
 
 module branch_controller (
@@ -27,7 +27,7 @@ module branch_controller (
             BGE: comp_result = zero;
             BLTU: comp_result = ~zero;
             BGEU: comp_result = zero;
-            default: comp_result = 1'bx;
+            default: comp_result = 1'b0;
         endcase
     end
 
